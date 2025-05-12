@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist", // Output compiled files to the dist folder
+    "rootDir": "./src", // Specify the root directory of input files
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@dist/*": ["dist/*"],
+      "@test/*": ["test/*"],
+    },
+    "lib": ["ESNext"],
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "noEmit": false, // Enable emitting compiled files
+    "strict": true,
+    "downlevelIteration": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "types": ["bun-types"],
+    "declaration": true, // Generate .d.ts files
+    "declarationDir": "./dist", // Output .d.ts files to the dist folder
+    "emitDeclarationOnly": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test"]
+}
