@@ -5,7 +5,7 @@
 
     "entries": [
         {
-            "filePath": "./src/models.ts",
+            "filePath": "./src/index.ts",
             "outFile": "dist/index.d.ts",
             "libraries": {
                 "inlinedLibraries": ["@Duc-Developer/AxiosTokenRefresh"]
