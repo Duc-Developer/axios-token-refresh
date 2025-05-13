@@ -1,5 +1,11 @@
 # axios-token-refresh
 
+## 1.0.3
+
+### Patch Changes
+
+- fix typescript
+
 ## 1.0.2
 
 ### Patch Changes
