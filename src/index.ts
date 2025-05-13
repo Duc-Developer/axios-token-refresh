@@ -1,7 +1,7 @@
 import { AxiosInstance } from 'axios';
 import { AxiosTFOptions } from './models';
 
-const registerAxiosTokenRefresh = (instance: AxiosInstance, options: AxiosTFOptions) => {
+const registerAxiosTokenRefresh = (instance: Omit<AxiosInstance, 'create'> & { create?: AxiosInstance['create'] }, options: AxiosTFOptions) => {
     const { refreshRequest, onRetry, statusCodes = [401], shouldRetry, retryTimes = 1 } = options ?? {};
 
     if (!refreshRequest || typeof refreshRequest !== 'function') {
