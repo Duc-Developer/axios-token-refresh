@@ -29,6 +29,44 @@ With bun:
 bun add axios-token-refresh
 ```
 
+## Example Usage
+
+Here is an example of how to use `axios-token-refresh` in your project:
+
+```tsx
+import axios from 'axios';
+import createAuthRefreshInterceptor from 'axios-token-refresh';
+
+// Create an Axios instance
+const apiClient = axios.create({
+  baseURL: 'https://api.example.com',
+});
+
+// Define the refresh token function
+const refreshAuthLogic = (failedRequest) =>
+  axios.post('https://api.example.com/refresh-token', {
+    token: localStorage.getItem('refreshToken'),
+  }).then((tokenRefreshResponse) => {
+    localStorage.setItem('accessToken', tokenRefreshResponse.data.accessToken);
+    failedRequest.response.config.headers['Authorization'] = 'Bearer ' + tokenRefreshResponse.data.accessToken;
+    return Promise.resolve();
+  });
+
+// Add the interceptor to the Axios instance
+createAuthRefreshInterceptor(apiClient, refreshAuthLogic);
+
+// Example API request
+apiClient.get('/protected-resource', {
+  headers: {
+    Authorization: 'Bearer ' + localStorage.getItem('accessToken'),
+  },
+}).then((response) => {
+  console.log('Protected resource data:', response.data);
+}).catch((error) => {
+  console.error('Error fetching protected resource:', error);
+});
+```
+
 ### Configuration Options
 
 Below is a table describing the available options for configuring token refresh behavior:
