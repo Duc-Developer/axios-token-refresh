@@ -1,6 +1,6 @@
 {
   "name": "axios-token-refresh",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This package is useful for refresh token when error 401,403 or any exception which u want to handle",
   "main": "./dist/index.esm.js",
   "module": "./dist/index.esm.js",
@@ -30,7 +30,7 @@
     "bun": ">=1.2.12"
   },
   "peerDependencies": {
-    "axios": ">=1"
+    "axios": ">=0.21.1"
   },
   "files": [
     "package.json",
