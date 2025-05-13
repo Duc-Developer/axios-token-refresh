@@ -30,7 +30,7 @@
     "bun": ">=1.2.12"
   },
   "peerDependencies": {
-    "axios": ">=1"
+    "axios": ">=0.21.1"
   },
   "files": [
     "package.json",
