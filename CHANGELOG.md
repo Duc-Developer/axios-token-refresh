@@ -1,5 +1,11 @@
 # axios-token-refresh
 
+## 1.0.1
+
+### Patch Changes
+
+- update peerDependencies
+
 ## 1.0.0
 
 ### Major Changes
