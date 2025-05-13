@@ -5,6 +5,7 @@
   "main": "./dist/index.esm.js",
   "module": "./dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "access": "public",
   "scripts": {
     "dev": "bun run scripts/watch.js",
     "test": "bun test --update-snapshots",
@@ -12,8 +13,7 @@
     "format": "prettier --write 'src/**/*'",
     "release": "bun bundle && changeset publish",
     "bundle": "rm -rf dist/ && bun run scripts/bundle.js && bun run bundle:declaration",
-    "bundle:declaration": "dts-bundle-generator --config dts-bundle-config.json",
-    "ci:version": "bun changeset version"
+    "bundle:declaration": "dts-bundle-generator --config dts-bundle-config.json"
   },
   "repository": {
     "type": "git",
