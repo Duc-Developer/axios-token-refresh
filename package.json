@@ -39,6 +39,9 @@
     "LICENSE",
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Duc-Developer",
   "license": "MIT",
   "bugs": {
