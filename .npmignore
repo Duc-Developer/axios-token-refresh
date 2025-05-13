@@ -2,3 +2,8 @@
 /test
 .prettierrc.json
 bunfig.toml
+scripts
+.prettierrc
+.vscode
+.vscode-test
+.prettierrc.json
