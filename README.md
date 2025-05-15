@@ -80,7 +80,7 @@ const refreshAuthLogic = (failedRequest) =>
   });
 
 // Add the interceptor to the Axios instance
-registerAxiosTokenRefresh(apiClient, refreshAuthLogic);
+registerAxiosTokenRefresh(apiClient, { refreshRequest: refreshAuthLogic });
 
 // Example API request
 apiClient.get('/protected-resource', {
