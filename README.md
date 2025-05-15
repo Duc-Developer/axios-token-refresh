@@ -2,9 +2,36 @@
   <img src="./assets/logo.png" alt="axios-token-refresh Logo" width="200" />
 </p>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/axios-token-refresh">
+    <img src="https://img.shields.io/npm/v/axios-token-refresh.svg" alt="npm version" />
+  </a>
+  <a href="https://www.npmjs.com/package/axios-token-refresh">
+    <img src="https://img.shields.io/npm/dm/axios-token-refresh.svg" alt="npm downloads" />
+  </a>
+  <a href="https://github.com/Duc-Developer/axios-token-refresh/actions">
+    <img src="https://github.com/Duc-Developer/axios-token-refresh/workflows/CI/badge.svg" alt="build status" />
+  </a>
+  <a href="https://github.com/Duc-Developer/axios-token-refresh">
+    <img src="https://img.shields.io/github/stars/Duc-Developer/axios-token-refresh.svg" alt="GitHub stars" />
+  </a>
+  <a href="https://github.com/Duc-Developer/axios-token-refresh/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Duc-Developer/axios-token-refresh.svg" alt="license" />
+  </a>
+</p>
+
 # axios-token-refresh
 
-`axios-token-refresh` is a utility for handling token refresh logic in Axios via interceptor. It intercepts responses and retries requests when specific status codes (e.g., 401) are encountered.
+`axios-token-refresh` is a lightweight and powerful utility for handling token refresh logic in Axios. It seamlessly integrates with Axios interceptors to automatically retry failed requests after token expiration. Perfect for managing authentication flows in modern web applications.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Example Usage](#example-usage)
+- [Configuration Options](#configuration-options)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
@@ -35,7 +62,7 @@ Here is an example of how to use `axios-token-refresh` in your project:
 
 ```tsx
 import axios from 'axios';
-import createAuthRefreshInterceptor from 'axios-token-refresh';
+import registerAxiosTokenRefresh from 'axios-token-refresh';
 
 // Create an Axios instance
 const apiClient = axios.create({
@@ -49,11 +76,11 @@ const refreshAuthLogic = (failedRequest) =>
   }).then((tokenRefreshResponse) => {
     localStorage.setItem('accessToken', tokenRefreshResponse.data.accessToken);
     failedRequest.response.config.headers['Authorization'] = 'Bearer ' + tokenRefreshResponse.data.accessToken;
-    return Promise.resolve();
+    return Promise.resolve(failedRequest);
   });
 
 // Add the interceptor to the Axios instance
-createAuthRefreshInterceptor(apiClient, refreshAuthLogic);
+registerAxiosTokenRefresh(apiClient, refreshAuthLogic);
 
 // Example API request
 apiClient.get('/protected-resource', {
@@ -78,3 +105,25 @@ Below is a table describing the available options for configuring token refresh 
 | `shouldRetry`    | `(error: AxiosError) => boolean` | (Optional) A custom function to determine whether to refresh. If provided, `statusCodes` will be ignored. | `undefined` |
 | `retryTimes`     | `number`                     | (Optional) The number of times to retry the request.                                            | `1`       |
 | `onRetry`        | `(requestConfig: AxiosRequestConfig) => AxiosRequestConfig \| Promise<AxiosRequestConfig>` | (Optional) A callback function that is called before each `refreshRequest`. It can modify and return the request configuration. | `undefined` |
+
+## Why Use This Package?
+
+- **Lightweight**: Minimal overhead, designed to integrate seamlessly with Axios.
+- **Customizable**: Configure retry logic, status codes, and token refresh behavior.
+- **Easy to Use**: Simple API for quick integration into your project.
+- **Reliable**: Automatically retries failed requests after token expiration.
+- **Flexible**: Works with any authentication flow, including OAuth and JWT.
+
+## Contributing
+
+Contributions are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to this project.
+
+## Support
+
+If you encounter any issues or have questions, please open an issue on [GitHub](https://github.com/Duc-Developer/axios-token-refresh/issues) or start a discussion in the [Discussions](https://github.com/Duc-Developer/axios-token-refresh/discussions) section.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+---
+
+`axios-token-refresh` is a utility for handling token refresh logic in Axios. It is ideal for managing authentication flows, retrying failed requests, and integrating with OAuth or JWT-based systems. Lightweight, customizable, and easy to use.
