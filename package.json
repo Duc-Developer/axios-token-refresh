@@ -1,7 +1,7 @@
 {
   "name": "axios-token-refresh",
-  "version": "1.0.6",
-  "description": "This package is useful for refresh token when error 401,403 or any exception which u want to handle",
+  "version": "1.0.7",
+  "description": "A lightweight utility for Axios to handle token refresh logic seamlessly. Automatically retries requests after token expiration with customizable retry logic and status code handling.",
   "main": "./dist/index.esm.js",
   "module": "./dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -24,7 +24,17 @@
     "axios-refresh",
     "refresh-token",
     "authorization",
-    "interceptor"
+    "interceptor",
+    "token-refresh",
+    "axios-interceptor",
+    "http-client",
+    "authentication",
+    "token-expiry",
+    "retry-requests",
+    "401-error",
+    "refresh-token-logic",
+    "axios-middleware",
+    "http-interceptor"
   ],
   "engines": {
     "bun": ">=1.2.12"
