@@ -17,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://your-domain.com/" />
                 <meta property="og:image" content="https://your-domain.com/og-image.png" />
+                <meta name="google-site-verification" content="LHFpjdaEIi2WH7e-m0KUaT3lUlyMqE2dTcIpBkcEyl4" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <MainLayout>
