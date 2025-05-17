@@ -1,7 +1,7 @@
 {
   "name": "axios-token-refresh",
-  "version": "1.0.6",
-  "description": "A lightweight utility for Axios to handle token refresh logic seamlessly. Automatically retries requests after token expiration with customizable retry logic and status code handling.",  
+  "version": "1.0.7",
+  "description": "A lightweight utility for Axios to handle token refresh logic seamlessly. Automatically retries requests after token expiration with customizable retry logic and status code handling.",
   "main": "./dist/index.esm.js",
   "module": "./dist/index.esm.js",
   "types": "dist/index.d.ts",
