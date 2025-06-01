@@ -60,7 +60,7 @@ bun add axios-token-refresh
 ## Demo
 You can see quickly demo [here](https://axios-token-refresh.vercel.app/example).
 
-## Example Usage
+## Example
 
 Here is an example of how to use `axios-token-refresh` in your project:
 
