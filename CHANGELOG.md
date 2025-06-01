@@ -1,5 +1,11 @@
 # axios-token-refresh
 
+## 1.0.8
+
+### Patch Changes
+
+- update support bundle for both cjs and esm
+
 ## 1.0.7
 
 ### Patch Changes
