@@ -4,6 +4,7 @@ import axios from 'axios';
 import registerAxiosTokenRefresh from 'axios-token-refresh';
 import { VALID_REFRESH_TOKEN } from '@src/constants';
 import { getRandomToken } from '@src/utils';
+import { useTranslation } from '@src/hooks/useTranslation';
 
 const EXPIRED_ACCESS_TOKEN = 'expired-access-token';
 
@@ -17,6 +18,7 @@ interface ApiCall {
 }
 
 export default function Example() {
+    const { t } = useTranslation();
     const [mockAccessToken, setMockAccessToken] = useState('expired-access-token');
     const [refreshCount, setRefreshCount] = useState(0);
     const [apiCalls, setApiCalls] = useState<ApiCall[]>([]);
@@ -148,48 +150,56 @@ export default function Example() {
 
     return (
         <div className="max-w-4xl mx-auto p-6">
-            <h1 className="text-3xl font-bold mb-6">Token Refresh Flow Visualization</h1>
+            <h1 className="text-3xl font-bold mb-6">{t('example.title')}</h1>
 
             {/* Control Panel */}
             <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
-                <h2 className="text-xl font-semibold mb-4">Control Panel</h2>
+                <h2 className="text-xl font-semibold mb-4">{t('example.controlPanel')}</h2>
                 <div className="flex flex-col lg:flex-row flex-wrap gap-4 mb-4">
-                    <div className='flex-1'>
-                        <label className="block text-sm font-medium mb-1">Current Access Token:</label>
+                    <div className="flex-1">
+                        <label className="block text-sm font-medium mb-1">{t('example.currentToken')}</label>
                         <div className="font-mono text-sm p-2 bg-white dark:bg-gray-700 rounded border max-w-full break-all">{mockAccessToken}</div>
                     </div>
-                    <div className='flex-1'>
-                        <label className="block text-sm font-medium mb-1">Refresh Count:</label>
+                    <div className="flex-1">
+                        <label className="block text-sm font-medium mb-1">{t('example.refreshCount')}</label>
                         <div className="font-mono text-sm p-2 bg-white dark:bg-gray-700 rounded border max-w-full break-all">{refreshCount}</div>
                     </div>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                     <button
-                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50 transition-colors"
                         onClick={callProtectedAPI}
                         disabled={isProcessing}
                     >
-                        {isProcessing ? 'Processing...' : 'Call Protected API'}
+                        {isProcessing ? t('example.processing') : t('example.callApi')}
                     </button>
-                    <button className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700" onClick={expiredToken}>
-                        Reset Token to Expired
+                    <button className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors" onClick={expiredToken}>
+                        {t('example.resetToken')}
                     </button>
-                    <button className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700" onClick={reset}>
-                        Reset Demo
+                    <button className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors" onClick={reset}>
+                        {t('example.resetDemo')}
                     </button>
                 </div>
             </div>
-            
+
             {/* State Machine Visualization */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6">
                 <div className="flex flex-wrap gap-4 justify-center">
                     {[
-                        { state: 'idle', active: !isProcessing && apiCalls.length === 0 },
-                        { state: 'requesting', active: isProcessing && !apiCalls.some((c) => c.status === 'error') },
-                        { state: 'token_expired', active: apiCalls.some((c) => c.status === 'error') },
-                        { state: 'refreshing', active: apiCalls.some((c) => c.status === 'refreshing') },
-                        { state: 'success', active: apiCalls.some((c) => c.status === 'success') && !isProcessing },
-                    ].map(({ state, active }) => (
+                        { state: 'idle', active: !isProcessing && apiCalls.length === 0, label: t('example.states.idle') },
+                        {
+                            state: 'requesting',
+                            active: isProcessing && !apiCalls.some((c) => c.status === 'error'),
+                            label: t('example.states.requesting'),
+                        },
+                        { state: 'tokenExpired', active: apiCalls.some((c) => c.status === 'error'), label: t('example.states.tokenExpired') },
+                        { state: 'refreshing', active: apiCalls.some((c) => c.status === 'refreshing'), label: t('example.states.refreshing') },
+                        {
+                            state: 'success',
+                            active: apiCalls.some((c) => c.status === 'success') && !isProcessing,
+                            label: t('example.states.success'),
+                        },
+                    ].map(({ state, active, label }) => (
                         <div
                             key={state}
                             className={`px-4 py-2 rounded-lg border-2 transition-all ${
@@ -198,18 +208,18 @@ export default function Example() {
                                     : 'border-gray-300 bg-gray-100 dark:bg-gray-700 text-gray-600'
                             }`}
                         >
-                            {state.replace('_', ' ').toUpperCase()}
+                            {label}
                         </div>
                     ))}
                 </div>
             </div>
 
             {/* Flow Visualization */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 mt-6">
-                <h2 className="text-xl font-semibold mb-4">Request Flow</h2>
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6">
+                <h2 className="text-xl font-semibold mb-4">{t('example.requestFlow')}</h2>
                 <div className="space-y-3">
                     {apiCalls.length === 0 ? (
-                        <div className="text-gray-500 text-center py-8">Click &quot;Call Protected API&quot; to start the demo</div>
+                        <div className="text-gray-500 text-center py-8">{t('example.noRequests')}</div>
                     ) : (
                         apiCalls.map((call) => (
                             <div
@@ -219,9 +229,11 @@ export default function Example() {
                                 <div className="flex items-center justify-between mb-2">
                                     <div className="flex items-center gap-3">
                                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(call.status)}`}>
-                                            {call.status.toUpperCase()}
+                                            {t(`example.status.${call.status}`)}
                                         </span>
-                                        <span className="font-medium">{call.type === 'initial' ? '📞 Initial Request' : '🔄 Retry Request'}</span>
+                                        <span className="font-medium">
+                                            {call.type === 'initial' ? '📞 ' + t('example.initialRequest') : '🔄 ' + t('example.retryRequest')}
+                                        </span>
                                     </div>
                                     <span className="text-xs text-gray-500">{new Date(call.timestamp).toLocaleTimeString()}</span>
                                 </div>
@@ -233,10 +245,9 @@ export default function Example() {
                 </div>
             </div>
 
-
             {/* Configuration Display */}
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mt-6">
-                <h2 className="text-xl font-semibold mb-4">Current Configuration</h2>
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
+                <h2 className="text-xl font-semibold mb-4">{t('example.configuration')}</h2>
                 <pre className="bg-white dark:bg-gray-900 p-4 rounded text-sm overflow-x-auto">
                     <code>{`registerAxiosTokenRefresh(api, {
   refreshRequest: async () => {

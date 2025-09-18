@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "axios-token-refresh: Automatic Token Refresh for Axios HTTP Client",
+    "description": "A lightweight npm package for handling token refresh and authentication flows with Axios. Seamlessly retry requests after token expiration. Perfect for JWT and OAuth implementations.",
+    "keywords": "axios, token, refresh, authentication, npm, package, javascript, typescript, JWT, OAuth, interceptor, retry"
+  },
+  "nav": {
+    "home": "Home",
+    "example": "Live Demo",
+    "github": "GitHub",
+    "npm": "npm Package",
+    "gettingStarted": "Getting Started",
+    "usage": "Usage",
+    "api": "API Reference",
+    "examplePage": "Example"
+  },
+  "home": {
+    "title": "axios-token-refresh",
+    "subtitle": "{{name}} is a lightweight utility for handling token refresh logic in Axios. It integrates seamlessly with Axios interceptors to automatically retry requests after token expiration. Perfect for authentication flows in modern web applications.",
+    "installation": {
+      "title": "Installation",
+      "command": "npm install axios-token-refresh"
+    },
+    "usage": {
+      "title": "Basic Usage"
+    },
+    "api": {
+      "title": "API Options",
+      "refreshRequest": "The function to handle token refresh, must return a Promise.",
+      "statusCodes": "List of status codes that trigger refresh (default: {{defaultValue}}).",
+      "shouldRetry": "Custom function to determine if refresh should occur.",
+      "retryTimes": "Number of retry attempts (default: {{defaultValue}}).",
+      "onRetry": "Callback before each refresh attempt."
+    },
+    "links": {
+      "title": "Links & Resources",
+      "github": "GitHub Repository",
+      "npm": "npm Package"
+    }
+  },
+  "example": {
+    "title": "Token Refresh Flow Visualization",
+    "controlPanel": "Control Panel",
+    "currentToken": "Current Access Token:",
+    "refreshCount": "Refresh Count:",
+    "callApi": "Call Protected API",
+    "processing": "Processing...",
+    "resetToken": "Reset Token to Expired",
+    "resetDemo": "Reset Demo",
+    "requestFlow": "Request Flow",
+    "noRequests": "Click \"Call Protected API\" to start the demo",
+    "initialRequest": "Initial Request",
+    "retryRequest": "Retry Request",
+    "configuration": "Current Configuration",
+    "states": {
+      "idle": "IDLE",
+      "requesting": "REQUESTING",
+      "tokenExpired": "TOKEN EXPIRED",
+      "refreshing": "REFRESHING",
+      "success": "SUCCESS"
+    },
+    "status": {
+      "pending": "PENDING",
+      "success": "SUCCESS",
+      "error": "ERROR",
+      "refreshing": "REFRESHING"
+    },
+    "messages": {
+      "tokenExpired": "Token expired - attempting refresh",
+      "retryFailed": "Retry failed",
+      "success": "Request successful"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 axios-token-refresh. Made with ❤️ by Duc-Developer."
+  },
+  "common": {
+    "required": "required",
+    "optional": "optional",
+    "default": "default"
+  }
+}

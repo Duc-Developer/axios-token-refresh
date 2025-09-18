@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "axios-token-refresh: Tự Động Làm Mới Token cho Axios HTTP Client",
+    "description": "Thư viện npm nhẹ để xử lý logic làm mới token và luồng xác thực với Axios. Tự động thử lại request sau khi token hết hạn. Hoàn hảo cho JWT và OAuth.",
+    "keywords": "axios, token, làm mới, xác thực, npm, package, javascript, typescript, JWT, OAuth, interceptor, thử lại"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "example": "Demo Trực Tiếp",
+    "github": "GitHub",
+    "npm": "Gói npm",
+    "gettingStarted": "Bắt Đầu",
+    "usage": "Cách Sử Dụng",
+    "api": "API",
+    "examplePage": "Demo"
+  },
+  "home": {
+    "title": "axios-token-refresh",
+    "subtitle": "{{name}} là một tiện ích nhẹ để xử lý logic làm mới token trong Axios. Nó tích hợp mượt mà với Axios interceptors để tự động thử lại các request sau khi token hết hạn. Hoàn hảo cho các luồng xác thực trong ứng dụng web hiện đại.",
+    "installation": {
+      "title": "Cài đặt",
+      "command": "npm install axios-token-refresh"
+    },
+    "usage": {
+      "title": "Cách sử dụng cơ bản"
+    },
+    "api": {
+      "title": "Tùy chọn API",
+      "refreshRequest": "Hàm xử lý làm mới token, phải trả về một Promise.",
+      "statusCodes": "Danh sách mã trạng thái kích hoạt làm mới (mặc định: {{defaultValue}}).",
+      "shouldRetry": "Hàm tùy chỉnh để xác định có nên làm mới hay không.",
+      "retryTimes": "Số lần thử lại (mặc định: {{defaultValue}}).",
+      "onRetry": "Callback trước mỗi lần thử làm mới."
+    },
+    "links": {
+      "title": "Liên kết & Tài nguyên",
+      "github": "Repository GitHub",
+      "npm": "Gói npm"
+    }
+  },
+  "example": {
+    "title": "Mô phỏng luồng Refresh Token",
+    "controlPanel": "Bảng Điều Khiển",
+    "currentToken": "Access Token Hiện Tại:",
+    "refreshCount": "Số Lần Làm Mới:",
+    "callApi": "Call API",
+    "processing": "Đang xử lý...",
+    "resetToken": "Reset Token về Expired",
+    "resetDemo": "Reset Demo",
+    "requestFlow": "Luồng Request",
+    "noRequests": "Nhấp \"Call API\" để bắt đầu demo",
+    "initialRequest": "Initial Request",
+    "retryRequest": "Retry Request",
+    "configuration": "Cấu Hình Hiện Tại",
+    "states": {
+       "idle": "IDLE",
+      "requesting": "REQUESTING",
+      "tokenExpired": "TOKEN EXPIRED",
+      "refreshing": "REFRESHING",
+      "success": "SUCCESS"
+    },
+    "status": {
+      "pending": "PENDING",
+      "success": "SUCCESS",
+      "error": "ERROR",
+      "refreshing": "REFRESHING"
+    },
+    "messages": {
+      "tokenExpired": "Token đã hết hạn - đang thử làm mới",
+      "retryFailed": "Thử lại thất bại",
+      "success": "Request thành công"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 axios-token-refresh. Được tạo với ❤️ bởi Duc-Developer."
+  },
+  "common": {
+    "required": "bắt buộc",
+    "optional": "tùy chọn",
+    "default": "mặc định"
+  }
+}
