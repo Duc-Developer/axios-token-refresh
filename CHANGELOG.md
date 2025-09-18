@@ -1,5 +1,11 @@
 # axios-token-refresh
 
+## 1.0.10
+
+### Patch Changes
+
+- release with new demo
+
 ## 1.0.9
 
 ### Patch Changes
