@@ -1,4 +1,5 @@
 import localFont from 'next/font/local';
+import { useTranslation } from '@src/hooks/useTranslation';
 
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
@@ -12,26 +13,29 @@ const geistMono = localFont({
 });
 
 export default function Home() {
+    const { t } = useTranslation();
+
     return (
         <div
             className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen p-4 sm:p-8 pb-20 gap-8 sm:gap-16 font-[family-name:var(--font-geist-sans)]`}
         >
             <main className="flex flex-col gap-6 sm:gap-8 flex-1 items-center sm:items-start w-full max-w-3xl mx-auto">
-                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center sm:text-left">axios-token-refresh</h1>
-                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl text-center sm:text-left">
-                    <b>axios-token-refresh</b> is a lightweight utility for handling token refresh logic in Axios. It integrates seamlessly with Axios
-                    interceptors to automatically retry requests after token expiration. Perfect for authentication flows in modern web applications.
+                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center sm:text-left">
+                    {t('home.title')}
+                </h1>
+                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 text-justify">
+                    {t('home.subtitle', { name: t('home.title') })}
                 </p>
 
                 <section id="getting-started" className="w-full">
-                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">Installation</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{t('home.installation.title')}</h2>
                     <pre className="bg-gray-100 dark:bg-gray-900 rounded p-3 sm:p-4 text-xs sm:text-sm overflow-x-auto">
-                        <code>npm install axios-token-refresh</code>
+                        <code>{t('home.installation.command')}</code>
                     </pre>
                 </section>
 
                 <section id="usage" className="w-full">
-                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">Basic Usage</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{t('home.usage.title')}</h2>
                     <pre className="bg-gray-100 dark:bg-gray-900 rounded p-3 sm:p-4 text-xs sm:text-sm overflow-x-auto">
                         <code>
                             {`import axios from 'axios';
@@ -47,36 +51,34 @@ registerAxiosTokenRefresh(api, {
     error.config.headers['Authorization'] = 'Bearer ' + res.data.accessToken;
     return api.request(error.config);
   },
-});
-`}
+});`}
                         </code>
                     </pre>
                 </section>
 
                 <section id="api" className="w-full">
-                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">API Options</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{t('home.api.title')}</h2>
                     <ul className="list-disc pl-5 sm:pl-6 text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                         <li>
-                            <b>refreshRequest</b>: <i>(required)</i> The function to handle token refresh, must return a Promise.
+                            <b>refreshRequest</b>: <i>({t('common.required')})</i> {t('home.api.refreshRequest')}
                         </li>
                         <li>
-                            <b>statusCodes</b>: <i>(optional)</i> List of status codes that trigger refresh (default: <code>[401]</code>).
+                            <b>statusCodes</b>: <i>({t('common.optional')})</i> {t('home.api.statusCodes', { defaultValue: '[401]' })}
                         </li>
                         <li>
-                            <b>shouldRetry</b>: <i>(optional)</i> Custom function to determine if refresh should occur.
+                            <b>shouldRetry</b>: <i>({t('common.optional')})</i> {t('home.api.shouldRetry')}
                         </li>
                         <li>
-                            <b>retryTimes</b>: <i>(optional)</i> Number of retry attempts (default:
-                            <code>1</code>).
+                            <b>retryTimes</b>: <i>({t('common.optional')})</i> {t('home.api.retryTimes', { defaultValue: '1' })}
                         </li>
                         <li>
-                            <b>onRetry</b>: <i>(optional)</i> Callback before each refresh attempt.
+                            <b>onRetry</b>: <i>({t('common.optional')})</i> {t('home.api.onRetry')}
                         </li>
                     </ul>
                 </section>
 
                 <section id="examples" className="w-full">
-                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">Links & Resources</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{t('home.links.title')}</h2>
                     <ul className="list-disc pl-5 sm:pl-6 text-sm sm:text-base">
                         <li>
                             <a
@@ -85,7 +87,7 @@ registerAxiosTokenRefresh(api, {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                GitHub Repository
+                                {t('home.links.github')}
                             </a>
                         </li>
                         <li>
@@ -95,14 +97,14 @@ registerAxiosTokenRefresh(api, {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                npm Package
+                                {t('home.links.npm')}
                             </a>
                         </li>
                     </ul>
                 </section>
             </main>
             <footer className="flex gap-4 flex-wrap items-center justify-center text-gray-500 text-xs sm:text-sm mt-8">
-                © 2025 axios-token-refresh. Made with ❤️ by Duc-Developer.
+                {t('footer.copyright')}
             </footer>
         </div>
     );
