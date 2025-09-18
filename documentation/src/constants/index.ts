@@ -9,3 +9,5 @@ export const VALID_ACCESS_TOKENS = [
 export const VALID_REFRESH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoLXRva2VuIiwidHlwZSI6InJlZnJlc2giLCJpYXQiOjE3MjY2NjU2MDB9.refresh_token_signature_here_xyz123";
 
 export const EXPIRED_ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJleHBpcmVkLXRva2VuIiwibmFtZSI6IkV4cGlyZWQgVXNlciIsImV4cCI6MTAwMDAwMDAwMH0.expired_signature_xyz";
+
+export const MY_DOMAIN = 'https://axios-token-refresh.vercel.app';
