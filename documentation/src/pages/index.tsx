@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import localFont from 'next/font/local';
 import { useTranslation } from '@src/hooks/useTranslation';
 
@@ -20,12 +21,25 @@ export default function Home() {
             className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen p-4 sm:p-8 pb-20 gap-8 sm:gap-16 font-[family-name:var(--font-geist-sans)]`}
         >
             <main className="flex flex-col gap-6 sm:gap-8 flex-1 items-center sm:items-start w-full max-w-3xl mx-auto">
-                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center sm:text-left">
-                    {t('home.title')}
-                </h1>
-                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 text-justify">
-                    {t('home.subtitle', { name: t('home.title') })}
-                </p>
+                <div className="flex gap-2">
+                    <a href="https://www.npmjs.com/package/axios-token-refresh">
+                        <img src="https://img.shields.io/npm/v/axios-token-refresh.svg" alt="npm version" />
+                    </a>
+                    <a href="https://www.npmjs.com/package/axios-token-refresh">
+                        <img src="https://img.shields.io/npm/dm/axios-token-refresh.svg" alt="npm downloads" />
+                    </a>
+                    <a href="https://github.com/Duc-Developer/axios-token-refresh/actions">
+                        <img src="https://github.com/Duc-Developer/axios-token-refresh/workflows/CI/badge.svg" alt="build status" />
+                    </a>
+                    <a href="https://github.com/Duc-Developer/axios-token-refresh">
+                        <img src="https://img.shields.io/github/stars/Duc-Developer/axios-token-refresh.svg" alt="GitHub stars" />
+                    </a>
+                    <a href="https://github.com/Duc-Developer/axios-token-refresh/blob/main/LICENSE">
+                        <img src="https://img.shields.io/github/license/Duc-Developer/axios-token-refresh.svg" alt="license" />
+                    </a>
+                </div>
+                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center sm:text-left">{t('home.title')}</h1>
+                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 text-justify">{t('home.subtitle', { name: t('home.title') })}</p>
 
                 <section id="getting-started" className="w-full">
                     <h2 className="text-xl sm:text-2xl font-semibold mb-2">{t('home.installation.title')}</h2>
