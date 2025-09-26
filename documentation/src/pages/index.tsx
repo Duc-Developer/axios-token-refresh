@@ -1,24 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import localFont from 'next/font/local';
 import { useTranslation } from '@src/hooks/useTranslation';
-
-const geistSans = localFont({
-    src: './fonts/GeistVF.woff',
-    variable: '--font-geist-sans',
-    weight: '100 900',
-});
-const geistMono = localFont({
-    src: './fonts/GeistMonoVF.woff',
-    variable: '--font-geist-mono',
-    weight: '100 900',
-});
 
 export default function Home() {
     const { t } = useTranslation();
 
     return (
         <div
-            className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen p-4 sm:p-8 pb-20 gap-8 sm:gap-16 font-[family-name:var(--font-geist-sans)]`}
+            className={`flex flex-col min-h-screen p-4 sm:p-8 pb-20 gap-8 sm:gap-16 font-[family-name:var(--font-geist-sans)]`}
         >
             <main className="flex flex-col gap-6 sm:gap-8 flex-1 items-center sm:items-start w-full max-w-3xl mx-auto">
                 <div className="flex gap-2">
