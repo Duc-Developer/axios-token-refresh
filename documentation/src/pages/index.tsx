@@ -1,5 +1,5 @@
+import Badge from '@src/components/Badge';
 import { useTranslation } from '@src/hooks/useTranslation';
-import Image from 'next/image';
 
 export default function Home() {
     const { t } = useTranslation();
@@ -10,56 +10,41 @@ export default function Home() {
         >
             <main className="flex flex-col gap-6 sm:gap-8 flex-1 items-center sm:items-start w-full max-w-3xl mx-auto">
                 <div className="flex gap-2 flex-wrap">
-                    <a href="https://www.npmjs.com/package/axios-token-refresh">
-                        <Image 
-                            src="https://img.shields.io/npm/v/axios-token-refresh.svg" 
-                            alt="npm version" 
-                            width={100} 
-                            height={20}
-                            unoptimized
-                            loading="eager"
-                        />
-                    </a>
-                    <a href="https://www.npmjs.com/package/axios-token-refresh">
-                        <Image 
-                            src="https://img.shields.io/npm/dm/axios-token-refresh.svg" 
-                            alt="npm downloads" 
-                            width={160} 
-                            height={20}
-                            unoptimized
-                            loading="eager"
-                        />
-                    </a>
-                    <a href="https://github.com/Duc-Developer/axios-token-refresh/actions">
-                        <Image 
-                            src="https://github.com/Duc-Developer/axios-token-refresh/workflows/CI/badge.svg" 
-                            alt="build status" 
-                            width={105} 
-                            height={20}
-                            unoptimized
-                            loading="eager"
-                        />
-                    </a>
-                    <a href="https://github.com/Duc-Developer/axios-token-refresh">
-                        <Image 
-                            src="https://img.shields.io/github/stars/Duc-Developer/axios-token-refresh.svg" 
-                            alt="GitHub stars" 
-                            width={85} 
-                            height={20}
-                            unoptimized
-                            loading="eager"
-                        />
-                    </a>
-                    <a href="https://github.com/Duc-Developer/axios-token-refresh/blob/main/LICENSE">
-                        <Image 
-                            src="https://img.shields.io/github/license/Duc-Developer/axios-token-refresh.svg" 
-                            alt="license" 
-                            width={90} 
-                            height={20}
-                            unoptimized
-                            loading="eager"
-                        />
-                    </a>
+                    <Badge
+                        src="https://img.shields.io/npm/v/axios-token-refresh.svg"
+                        alt="npm version"
+                        width={100}
+                        height={20}
+                        href="https://www.npmjs.com/package/axios-token-refresh"
+                    />
+                    <Badge
+                        src="https://img.shields.io/npm/dm/axios-token-refresh.svg"
+                        alt="npm downloads"
+                        width={160}
+                        height={20}
+                        href="https://www.npmjs.com/package/axios-token-refresh"
+                    />
+                    <Badge
+                        src="https://github.com/Duc-Developer/axios-token-refresh/workflows/CI/badge.svg"
+                        alt="build status"
+                        width={105}
+                        height={20}
+                        href="https://github.com/Duc-Developer/axios-token-refresh/actions"
+                    />
+                    <Badge
+                        src="https://img.shields.io/github/stars/Duc-Developer/axios-token-refresh.svg"
+                        alt="GitHub stars"
+                        width={85}
+                        height={20}
+                        href="https://github.com/Duc-Developer/axios-token-refresh"
+                    />
+                    <Badge
+                        src="https://img.shields.io/github/license/Duc-Developer/axios-token-refresh.svg"
+                        alt="license"
+                        width={90}
+                        height={20}
+                        href="https://github.com/Duc-Developer/axios-token-refresh/blob/main/LICENSE"
+                    />
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center sm:text-left">{t('home.title')}</h1>
                 <p className="text-base sm:text-lg text-gray-800 dark:text-gray-200 text-justify">{t('home.subtitle', { name: t('home.title') })}</p>
