@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import { useTranslation } from '@src/hooks/useTranslation';
+import Image from 'next/image';
 
 export default function Home() {
     const { t } = useTranslation();
@@ -9,37 +9,72 @@ export default function Home() {
             className={`flex flex-col min-h-screen p-4 sm:p-8 pb-20 gap-8 sm:gap-16 font-[family-name:var(--font-geist-sans)]`}
         >
             <main className="flex flex-col gap-6 sm:gap-8 flex-1 items-center sm:items-start w-full max-w-3xl mx-auto">
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                     <a href="https://www.npmjs.com/package/axios-token-refresh">
-                        <img src="https://img.shields.io/npm/v/axios-token-refresh.svg" alt="npm version" />
+                        <Image 
+                            src="https://img.shields.io/npm/v/axios-token-refresh.svg" 
+                            alt="npm version" 
+                            width={100} 
+                            height={20}
+                            unoptimized
+                            loading="lazy"
+                        />
                     </a>
                     <a href="https://www.npmjs.com/package/axios-token-refresh">
-                        <img src="https://img.shields.io/npm/dm/axios-token-refresh.svg" alt="npm downloads" />
+                        <Image 
+                            src="https://img.shields.io/npm/dm/axios-token-refresh.svg" 
+                            alt="npm downloads" 
+                            width={160} 
+                            height={20}
+                            unoptimized
+                            loading="lazy"
+                        />
                     </a>
                     <a href="https://github.com/Duc-Developer/axios-token-refresh/actions">
-                        <img src="https://github.com/Duc-Developer/axios-token-refresh/workflows/CI/badge.svg" alt="build status" />
+                        <Image 
+                            src="https://github.com/Duc-Developer/axios-token-refresh/workflows/CI/badge.svg" 
+                            alt="build status" 
+                            width={105} 
+                            height={20}
+                            unoptimized
+                            loading="lazy"
+                        />
                     </a>
                     <a href="https://github.com/Duc-Developer/axios-token-refresh">
-                        <img src="https://img.shields.io/github/stars/Duc-Developer/axios-token-refresh.svg" alt="GitHub stars" />
+                        <Image 
+                            src="https://img.shields.io/github/stars/Duc-Developer/axios-token-refresh.svg" 
+                            alt="GitHub stars" 
+                            width={85} 
+                            height={20}
+                            unoptimized
+                            loading="lazy"
+                        />
                     </a>
                     <a href="https://github.com/Duc-Developer/axios-token-refresh/blob/main/LICENSE">
-                        <img src="https://img.shields.io/github/license/Duc-Developer/axios-token-refresh.svg" alt="license" />
+                        <Image 
+                            src="https://img.shields.io/github/license/Duc-Developer/axios-token-refresh.svg" 
+                            alt="license" 
+                            width={90} 
+                            height={20}
+                            unoptimized
+                            loading="lazy"
+                        />
                     </a>
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center sm:text-left">{t('home.title')}</h1>
-                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 text-justify">{t('home.subtitle', { name: t('home.title') })}</p>
+                <p className="text-base sm:text-lg text-gray-800 dark:text-gray-200 text-justify">{t('home.subtitle', { name: t('home.title') })}</p>
 
                 <section id="getting-started" className="w-full">
-                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{t('home.installation.title')}</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-900 dark:text-white">{t('home.installation.title')}</h2>
                     <pre className="bg-gray-100 dark:bg-gray-900 rounded p-3 sm:p-4 text-xs sm:text-sm overflow-x-auto">
-                        <code>{t('home.installation.command')}</code>
+                        <code className="text-gray-800 dark:text-gray-200">{t('home.installation.command')}</code>
                     </pre>
                 </section>
 
                 <section id="usage" className="w-full">
-                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{t('home.usage.title')}</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-900 dark:text-white">{t('home.usage.title')}</h2>
                     <pre className="bg-gray-100 dark:bg-gray-900 rounded p-3 sm:p-4 text-xs sm:text-sm overflow-x-auto">
-                        <code>
+                        <code className="text-gray-800 dark:text-gray-200">
                             {`import axios from 'axios';
 import registerAxiosTokenRefresh from 'axios-token-refresh';
 
@@ -59,8 +94,8 @@ registerAxiosTokenRefresh(api, {
                 </section>
 
                 <section id="api" className="w-full">
-                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{t('home.api.title')}</h2>
-                    <ul className="list-disc pl-5 sm:pl-6 text-gray-700 dark:text-gray-300 text-sm sm:text-base">
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-900 dark:text-white">{t('home.api.title')}</h2>
+                    <ul className="list-disc pl-5 sm:pl-6 text-gray-800 dark:text-gray-200 text-sm sm:text-base">
                         <li>
                             <b>refreshRequest</b>: <i>({t('common.required')})</i> {t('home.api.refreshRequest')}
                         </li>
@@ -80,7 +115,7 @@ registerAxiosTokenRefresh(api, {
                 </section>
 
                 <section id="examples" className="w-full">
-                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{t('home.links.title')}</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-900 dark:text-white">{t('home.links.title')}</h2>
                     <ul className="list-disc pl-5 sm:pl-6 text-sm sm:text-base">
                         <li>
                             <a
@@ -105,7 +140,7 @@ registerAxiosTokenRefresh(api, {
                     </ul>
                 </section>
             </main>
-            <footer className="flex gap-4 flex-wrap items-center justify-center text-gray-500 text-xs sm:text-sm mt-8">
+            <footer className="flex gap-4 flex-wrap items-center justify-center text-gray-600 dark:text-gray-400 text-xs sm:text-sm mt-8">
                 {t('footer.copyright')}
             </footer>
         </div>
