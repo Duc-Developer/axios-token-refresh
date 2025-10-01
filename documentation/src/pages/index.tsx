@@ -17,7 +17,7 @@ export default function Home() {
                             width={100} 
                             height={20}
                             unoptimized
-                            loading="lazy"
+                            loading="eager"
                         />
                     </a>
                     <a href="https://www.npmjs.com/package/axios-token-refresh">
@@ -27,7 +27,7 @@ export default function Home() {
                             width={160} 
                             height={20}
                             unoptimized
-                            loading="lazy"
+                            loading="eager"
                         />
                     </a>
                     <a href="https://github.com/Duc-Developer/axios-token-refresh/actions">
@@ -37,7 +37,7 @@ export default function Home() {
                             width={105} 
                             height={20}
                             unoptimized
-                            loading="lazy"
+                            loading="eager"
                         />
                     </a>
                     <a href="https://github.com/Duc-Developer/axios-token-refresh">
@@ -47,7 +47,7 @@ export default function Home() {
                             width={85} 
                             height={20}
                             unoptimized
-                            loading="lazy"
+                            loading="eager"
                         />
                     </a>
                     <a href="https://github.com/Duc-Developer/axios-token-refresh/blob/main/LICENSE">
@@ -57,7 +57,7 @@ export default function Home() {
                             width={90} 
                             height={20}
                             unoptimized
-                            loading="lazy"
+                            loading="eager"
                         />
                     </a>
                 </div>
