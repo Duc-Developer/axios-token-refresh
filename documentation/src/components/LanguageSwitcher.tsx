@@ -9,7 +9,9 @@ export default function LanguageSwitcher() {
 
     const languages = [
         { code: 'en', name: 'English', flag: '🇺🇸' },
-        { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' }
+        { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
+        { code: 'jp', name: '日本語', flag: '🇯🇵' },
+        { code: 'ru', name: 'Русский', flag: '🇷🇺' },
     ];
 
     const currentLanguage = languages.find(lang => lang.code === locale) || languages[0];

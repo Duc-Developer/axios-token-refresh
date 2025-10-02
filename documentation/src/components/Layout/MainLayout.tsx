@@ -52,30 +52,34 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                             </button>
                             <div className="mb-8 font-bold text-xl text-gray-900 dark:text-white">axios-token-refresh</div>
                             <nav className="space-y-2">
-                                <a
-                                    href="#getting-started"
+                                <Link
+                                    href="/#getting-started"
                                     className="block text-gray-700 dark:text-gray-300 hover:text-blue-600"
                                     onClick={() => setOpen(false)}
                                 >
-                                   {t('nav.gettingStarted')}
-                                </a>
-                                <a
-                                    href="#usage"
+                                    {t('nav.gettingStarted')}
+                                </Link>
+                                <Link
+                                    href="/#usage"
                                     className="block text-gray-700 dark:text-gray-300 hover:text-blue-600"
                                     onClick={() => setOpen(false)}
                                 >
                                     {t('nav.usage')}
-                                </a>
-                                <a href="#api" className="block text-gray-700 dark:text-gray-300 hover:text-blue-600" onClick={() => setOpen(false)}>
+                                </Link>
+                                <Link
+                                    href="/#api"
+                                    className="block text-gray-700 dark:text-gray-300 hover:text-blue-600"
+                                    onClick={() => setOpen(false)}
+                                >
                                     {t('nav.api')}
-                                </a>
-                                <a
-                                    href="#examples"
+                                </Link>
+                                <Link
+                                    href="/example"
                                     className="block text-gray-700 dark:text-gray-300 hover:text-blue-600"
                                     onClick={() => setOpen(false)}
                                 >
                                     {t('nav.examplePage')}
-                                </a>
+                                </Link>
                             </nav>
                         </aside>
                     </div>
@@ -89,14 +93,14 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     <div className="flex flex-1 items-center justify-between">
                         <div className="ml-12 md:ml-0 font-semibold text-lg text-gray-900 dark:text-white">Documentation</div>
 
-                        <a
+                        <Link
                             href="https://github.com/Duc-Developer/axios-token-refresh"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
+                            className="hover:underline text-blue-400 hover:text-blue-300 dark:text-blue-400 dark:hover:text-blue-300"
                         >
                             GitHub
-                        </a>
+                        </Link>
                     </div>
                     <LanguageSwitcher />
                 </header>

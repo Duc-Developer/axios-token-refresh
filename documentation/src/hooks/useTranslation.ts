@@ -1,8 +1,10 @@
 import { useRouter } from 'next/router';
 import en from '@src/locales/en.json';
 import vi from '@src/locales/vi.json';
+import jp from '@src/locales/jp.json';
+import ru from '@src/locales/ru.json';
 
-const translations = { en, vi };
+const translations = { en, vi, jp, ru };
 
 export function useTranslation() {
   const { locale } = useRouter();
