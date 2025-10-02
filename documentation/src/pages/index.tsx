@@ -1,13 +1,12 @@
 import Badge from '@src/components/Badge';
 import { useTranslation } from '@src/hooks/useTranslation';
+import Link from 'next/link';
 
 export default function Home() {
     const { t } = useTranslation();
 
     return (
-        <div
-            className={`flex flex-col min-h-screen p-4 sm:p-8 pb-20 gap-8 sm:gap-16 font-[family-name:var(--font-geist-sans)]`}
-        >
+        <div className={`flex flex-col min-h-screen p-4 sm:p-8 pb-20 gap-8 sm:gap-16 font-[family-name:var(--font-geist-sans)]`}>
             <main className="flex flex-col gap-6 sm:gap-8 flex-1 items-center sm:items-start w-full max-w-3xl mx-auto">
                 <div className="flex gap-2 flex-wrap">
                     <Badge
@@ -32,18 +31,18 @@ export default function Home() {
                         href="https://github.com/Duc-Developer/axios-token-refresh/actions"
                     />
                     <Badge
-                        src="https://img.shields.io/github/stars/Duc-Developer/axios-token-refresh.svg"
-                        alt="GitHub stars"
-                        width={85}
-                        height={20}
-                        href="https://github.com/Duc-Developer/axios-token-refresh"
-                    />
-                    <Badge
                         src="https://img.shields.io/github/license/Duc-Developer/axios-token-refresh.svg"
                         alt="license"
                         width={90}
                         height={20}
                         href="https://github.com/Duc-Developer/axios-token-refresh/blob/main/LICENSE"
+                    />
+                    <Badge
+                        src="https://img.shields.io/github/stars/Duc-Developer/axios-token-refresh.svg"
+                        alt="GitHub stars"
+                        width={85}
+                        height={20}
+                        href="https://github.com/Duc-Developer/axios-token-refresh"
                     />
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center sm:text-left">{t('home.title')}</h1>
@@ -103,24 +102,14 @@ registerAxiosTokenRefresh(api, {
                     <h2 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-900 dark:text-white">{t('home.links.title')}</h2>
                     <ul className="list-disc pl-5 sm:pl-6 text-sm sm:text-base">
                         <li>
-                            <a
-                                href="https://github.com/Duc-Developer/axios-token-refresh"
-                                className="text-blue-600 hover:underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <Link href="https://github.com/Duc-Developer/axios-token-refresh" target="_blank" rel="noopener noreferrer" className='hover:underline text-blue-400 hover:text-blue-300 dark:text-blue-400 dark:hover:text-blue-300'>
                                 {t('home.links.github')}
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="https://www.npmjs.com/package/axios-token-refresh"
-                                className="text-blue-600 hover:underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <Link href="https://www.npmjs.com/package/axios-token-refresh" target="_blank" rel="noopener noreferrer" className='hover:underline text-blue-400 hover:text-blue-300 dark:text-blue-400 dark:hover:text-blue-300'>
                                 {t('home.links.npm')}
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </section>

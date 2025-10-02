@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "axios-token-refresh: Axios HTTPクライアント用自動トークン更新",
+    "description": "Axiosでトークン更新と認証フローを処理するための軽量npmパッケージ。トークン期限切れ後にリクエストをシームレスに再試行します。JWTとOAuth実装に最適です。",
+    "keywords": "axios, トークン, 更新, 認証, npm, パッケージ, javascript, typescript, JWT, OAuth, インターセプター, 再試行"
+  },
+  "nav": {
+    "home": "ホーム",
+    "example": "ライブデモ",
+    "github": "GitHub",
+    "npm": "npmパッケージ",
+    "gettingStarted": "はじめる",
+    "usage": "使用方法",
+    "api": "APIリファレンス",
+    "examplePage": "例"
+  },
+  "home": {
+    "title": "axios-token-refresh",
+    "subtitle": "{{name}}は、Axiosでトークン更新ロジックを処理するための軽量ユーティリティです。Axiosインターセプターとシームレスに統合され、トークン期限切れ後にリクエストを自動的に再試行します。現代のWebアプリケーションの認証フローに最適です。",
+    "installation": {
+      "title": "インストール",
+      "command": "npm install axios-token-refresh"
+    },
+    "usage": {
+      "title": "基本的な使用方法"
+    },
+    "api": {
+      "title": "APIオプション",
+      "refreshRequest": "トークン更新を処理する関数。Promiseを返す必要があります。",
+      "statusCodes": "更新をトリガーするステータスコードのリスト（デフォルト: {{defaultValue}}）。",
+      "shouldRetry": "更新を実行するかどうかを決定するカスタム関数。",
+      "retryTimes": "再試行回数（デフォルト: {{defaultValue}}）。",
+      "onRetry": "各更新試行前のコールバック。"
+    },
+    "links": {
+      "title": "リンクとリソース",
+      "github": "GitHubリポジトリ",
+      "npm": "npmパッケージ"
+    }
+  },
+  "example": {
+    "title": "トークン更新フローの可視化",
+    "controlPanel": "コントロールパネル",
+    "currentToken": "現在のアクセストークン:",
+    "refreshCount": "更新回数:",
+    "callApi": "保護されたAPIを呼び出す",
+    "processing": "処理中...",
+    "resetToken": "トークンを期限切れにリセット",
+    "resetDemo": "デモをリセット",
+    "requestFlow": "リクエストフロー",
+    "noRequests": "デモを開始するには「保護されたAPIを呼び出す」をクリックしてください",
+    "initialRequest": "初期リクエスト",
+    "retryRequest": "再試行リクエスト",
+    "configuration": "現在の設定",
+    "states": {
+      "idle": "待機中",
+      "requesting": "リクエスト中",
+      "tokenExpired": "トークン期限切れ",
+      "refreshing": "更新中",
+      "success": "成功"
+    },
+    "status": {
+      "pending": "保留中",
+      "success": "成功",
+      "error": "エラー",
+      "refreshing": "更新中"
+    },
+    "messages": {
+      "tokenExpired": "トークンが期限切れです - 更新を試行中",
+      "retryFailed": "再試行に失敗しました",
+      "success": "リクエストが成功しました"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 axios-token-refresh。Duc-Developerが❤️で作成。"
+  },
+  "common": {
+    "required": "必須",
+    "optional": "オプション",
+    "default": "デフォルト"
+  }
+}
